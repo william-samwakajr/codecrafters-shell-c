@@ -12,10 +12,13 @@ int main(int argc, char *argv[]) {
     if(fgets(command,sizeof(command),stdin) == NULL){
       break;
     }
-    if(command == "exit"){
-      printf("\x03");
+    
+   command[strcspn(command,"\n")] = '\0';
+
+    if(strcmp( command, "exit" ) == 0){
+      exit(0);
     }
-    command[strcspn(command,"\n")] = '\0';
+
 
    printf("%s: command not found\n",command);
   } 
