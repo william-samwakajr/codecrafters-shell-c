@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
   InputBuffer inputBuffer = createBuffer();
 
 
-  printf("$");;
+  printf("$ ");;
  while(intitializeBuffer(&inputBuffer) ){
     checkBufferValidity(&inputBuffer);
       
@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
       
       printf("%s : command not found\n",inputBuffer.input);
     }
-    printf("$");
+    printf("$ ");
   }
 
     
