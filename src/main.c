@@ -33,12 +33,36 @@ InputBuffer createBuffer(){
 }
 
  bool checkBufferValidity(InputBuffer* inputBuffer){
+
   char* copy = strdup(inputBuffer->input);
   char* token = strtok(copy," ");
+  char* inputAfterCommand = inputBuffer->input + strlen(token) + 1;
+
+    if(strcmp(token,"type") == 0){
+
+      inputBuffer->isValid = true;
+
+      if(strcmp(inputAfterCommand,"echo") == 0){
+
+        printf("echo is a shell builtin\n");
+
+      }else if(strcmp(inputAfterCommand,"exit")== 0){
+       
+        printf("exit is a shell builtin\n");
+      
+      }else if(strcmp(inputAfterCommand,"type")==0){
+      
+      printf("type is a shell builtin\n");
+
+    }else{
+      printf("%s: not found\n",inputAfterCommand);
+    }
+      
+    }
     if(strcmp(token,"echo") == 0){
       inputBuffer->isValid = true;
       
-      printf("%s  \n", inputBuffer->input + strlen(token) + 1);
+      printf("%s  \n", inputAfterCommand);
     }
   
    if(strcmp(inputBuffer->input,"exit") == 0){
