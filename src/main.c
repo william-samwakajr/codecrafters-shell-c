@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
       break;
     }
     if(command == "exit"){
-      printf("\x03")
+      printf("\x03");
     }
     command[strcspn(command,"\n")] = '\0';
 
