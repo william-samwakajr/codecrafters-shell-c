@@ -33,6 +33,11 @@ InputBuffer createBuffer(){
 }
 
  bool checkBufferValidity(InputBuffer* inputBuffer){
+  
+  char* pathEnv = getenv("PATH");
+  if(path_env == NULL){
+    fprintf(stderr,"PATH environment Variable not found. \n");
+  }
 
   char* copy = strdup(inputBuffer->input);
   char* token = strtok(copy," ");
