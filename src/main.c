@@ -35,7 +35,7 @@ InputBuffer createBuffer(){
  bool checkBufferValidity(InputBuffer* inputBuffer){
   
   char* pathEnv = getenv("PATH");
-  if(path_env == NULL){
+  if(pathEnv == NULL){
     fprintf(stderr,"PATH environment Variable not found. \n");
   }
 
